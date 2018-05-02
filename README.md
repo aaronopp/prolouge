@@ -1,41 +1,17 @@
 # client
 
-This is a sample Grommet application for reference.
+A simple web app to help Facebook Group Admins create Book Clubs for their group.
 
-To run this application, execute the following commands:
-
-  1. Install NPM modules
-
-    ```
-    $ npm install (or yarn install)
-    ```
-
-  2. Start the back-end server:
-
-    ```
-    $ npm run dev-server
-    ```
-
-  3. Start the front-end dev server:
+There is a front end web react server, and a backend python web server running on flask.
+Both will need to be running to use the app. To run the react server, type:
 
     ```
     $ npm run dev
     ```
-
-  4. Create the app distribution to be used by a back-end server
-
+To start the flask server:
     ```
-    $ NODE_ENV=production grommet pack
-    ```
-
-  5. Start the server in production mode:
-
-    ```
-    $ npm start
+    $ cd flask
+    $ python Prologue.py
     ```
 
-  6. Test and run linters:
-
-    ```
-    $ npm test
-    ```
+Make sure the react server is pointing to the right URL of the flask server!
