@@ -8,6 +8,7 @@ import Checkmark from 'grommet/components/icons/base/checkmark';
 import Button from 'grommet/components/Button';
 import Spinning from 'grommet/components/icons/Spinning';
 import Toast from 'grommet/components/Toast';
+import SweetAlert from 'sweetalert-react';
 
 
 const ChecklistItem = ({ children }) => (<div>

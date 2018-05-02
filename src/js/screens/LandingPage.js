@@ -22,13 +22,10 @@ const LandingPage = ({ data }) => (
       <Box direction='row'
         justify='center'
         align='center'>
-        <Box
-          basis='1/1'
-        >
-          <Heading margin='none' className='landing__hero__copy'>
-            {data.copy}
-          </Heading>
-        </Box>
+
+        <Heading margin='none' className='landing__hero__copy'>
+          {data.copy}
+        </Heading>
       </Box>
     </Hero>
 

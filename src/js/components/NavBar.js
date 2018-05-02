@@ -9,37 +9,35 @@ import LoginIcon from 'grommet/components/icons/base/Login';
 import FacebookLogin from 'react-facebook-login';
 
 
-const UserListing = () => (<Menu responsive={true}
+const UserListing = ({ groups = [] }) => (<Menu responsive={true}
   icon={<LoginIcon />}
-  label='Label'
+  label='Facebook Groups'
   inline={false}
   primary={false}
   closeOnClick={false}>
-  <Anchor href='#'
+  { groups.map(group => (<Anchor key={`${group.id}`}
+    path={`/listing/${group.id}`}
     className='active'>
-  First action
-  </Anchor>
-  <Anchor href='#'>
-  Second action
-  </Anchor>
-  <Anchor href='#'>
-  Third action
-  </Anchor>
+    {group.name}
+  </Anchor>))}
 </Menu>);
 
-export default ({ appId, fields, accessToken, onLogin, ...props }) => (
+export default ({ appId, fields, accessToken, scopes, onLogin, groups, ...props }) => (
   <Header className='header'>
     <Title>
-      <Anchor className='header__title' path='/' label='faceBook' />
+      <Anchor className='header__title' path='/' label='Prologue' />
     </Title>
     <Box flex={true}
       justify='end'
       direction='row'
       responsive={false}>
-      {accessToken ? <UserListing /> : <FacebookLogin
+      {accessToken ? <UserListing groups={groups} /> : <FacebookLogin
         appId={appId}
         autoLoad={true}
+        textButton='Login'
         fields={fields}
+        scopes={scopes}
+        onClick={() => {}}
         callback={onLogin} />}
     </Box>
   </Header>

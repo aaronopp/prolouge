@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 
-import nav from './nav';
 import auth from './auth';
 import landing from './landing';
 import listing from './listing';
+import confirmation from './confirmation';
 
 export default combineReducers({
-  nav,
   auth,
   listing,
-  landing
+  landing,
+  confirmation
 });

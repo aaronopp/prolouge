@@ -13,6 +13,8 @@ import NavBar from '../components/NavBar';
 import Listing from '../screens/Listing';
 import NotFound from '../screens/NotFound';
 import LandingPage from '../screens/LandingPage';
+import Confirmation from '../screens/Confirmation';
+import Congrats from '../screens/Congrats';
 
 class Main extends Component {
   render() {
@@ -27,6 +29,8 @@ class Main extends Component {
               <Switch>
                 <Route exact={true} path='/' component={LandingPage} />
                 <Route path='/listing' component={Listing} />
+                <Route path='/confirmation/:id' component={Confirmation} />
+                <Route path='/congrats' component={Congrats} />
                 <Route path='/*' component={NotFound} />
               </Switch>
             </Section>
@@ -41,13 +45,20 @@ const select = state => ({
   auth: state.auth
 });
 
-
 const mapDispatchToProps = dispatch => ({
   onLogin: (payload) => {
-    dispatch({
-      type: SESSION_LOGIN,
-      payload
-    });
+    fetch(`https://infindo.serveo.net/getgroups?access_token=${payload.accessToken}`, { method: 'GET' })
+      .then(response => response.json())
+      .then((response) => {
+        dispatch({
+          type: SESSION_LOGIN,
+          payload: {
+            ...payload,
+            accessToken: payload.accessToken,
+            groups: response.data
+          }
+        });
+      });
   }
 });
 
