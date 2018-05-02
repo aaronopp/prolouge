@@ -1,0 +1,19 @@
+.landing {
+    &__hero {
+        &__copy {
+            color: #fff;
+            background: rebeccapurple;
+            padding: 5px;
+        }
+    }
+
+    &__feature-list {
+        list-style: none;
+          padding-top: 32px;
+        &__item {
+            width: 100%;
+            max-width: 100% !important;
+            margin-bottom: 16px;
+        }
+    }
+}
