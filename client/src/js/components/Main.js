@@ -47,7 +47,7 @@ const select = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onLogin: (payload) => {
-    fetch(`https://infindo.serveo.net/getgroups?access_token=${payload.accessToken}`, { method: 'GET' })
+    fetch(`https://32320057.ngrok.io/getgroups?access_token=${payload.accessToken}`, { method: 'GET' })
       .then(response => response.json())
       .then((response) => {
         dispatch({

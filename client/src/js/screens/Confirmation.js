@@ -68,7 +68,7 @@ const select = state => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   postAll: (auth) => {
     dispatch({ type: 'POSTING' });
-    fetch(`https://infindo.serveo.net/postall?access_token=${auth.accessToken}`, { method: 'GET' })
+    fetch(`https://32320057.ngrok.io/postall?access_token=${auth.accessToken}`, { method: 'GET' })
       .then(response => response.json())
       .then((response) => {
         dispatch({ type: 'POSTED' });
