@@ -1,0 +1,17 @@
+.header {
+    background: #639;
+    color: #fff;
+    padding: 0 30px;
+
+    &__title {
+        color: #fff !important;
+    }
+    .grommetux-button__label{
+        color: #fff;
+    }
+
+    .grommetux-control-icon {
+        fill: #fff !important;
+        stroke: #fff !important;
+    }
+}
